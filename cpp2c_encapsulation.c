@@ -33,14 +33,22 @@ void thatFunc()
 void doBoxes()
 {
     printf("\n--- Start doBoxes() ---\n\n");
+//      Box b1(3);
     box b1;
     box_init_d(&b1,3);
+//      Box b2(4, 5, 6);
     box b2;
     box_init_ddd(&b2,4,5,6);
+//     std::printf("b1 volume: %f\n", b1.getVolume());
+//     std::printf("b2 volume: %f\n", b2.getVolume());
     printf("b1 volume: %f\n", box_get_volume_C(&b1));
     printf("b2 volume: %f\n", box_get_volume_C(&b2));
+//     b1 *= 1.5;
+//     b2 *= 0.5;
     box_mult_eq_d(&b1,1.5);
     box_mult_eq_d(&b2,0.5);
+//      std::printf("b1 volume: %f\n", b1.getVolume());
+//     std::printf("b2 volume: %f\n", b2.getVolume());
     printf("b1 volume: %f\n", box_get_volume_C(&b1));
     printf("b2 volume: %f\n", box_get_volume_C(&b2));
     box b3 = b2;
